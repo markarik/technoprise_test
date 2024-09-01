@@ -18,6 +18,15 @@ class CreateListPage extends HookConsumerWidget {
     return Scaffold(
       backgroundColor: COLORBACKGROUND,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: COLORBLACK,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: COLORWHITE,
         elevation: 0,
         title: Text(
