@@ -1,5 +1,6 @@
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:technoprise_test/commonWidgets/widgets.dart';
 import 'package:technoprise_test/imports.dart';
 
 class WorkaHubTextFormField extends HookWidget {
@@ -23,6 +24,7 @@ class WorkaHubTextFormField extends HookWidget {
     this.hintText,
     this.textAlign = TextAlign.center,
     required this.title,
+    this.isRequired = false,
   }) : _controller = controller;
 
   final TextEditingController _controller;
@@ -43,18 +45,24 @@ class WorkaHubTextFormField extends HookWidget {
   final String? hintText;
   final TextAlign textAlign;
   final String title;
+  final bool isRequired;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          textAlign: TextAlign.start,
-          style: fontSize14500.copyWith(
-            color: COLORBLACK,
-          ),
+        Row(
+          children: [
+            Text(
+              title,
+              textAlign: TextAlign.start,
+              style: fontSize14500.copyWith(
+                color: COLORBLACK,
+              ),
+            ),
+            isRequired ? astericWidget() : SizedBox.shrink()
+          ],
         ),
         SizedBox(
           height: AppSizes.appHeight(4),

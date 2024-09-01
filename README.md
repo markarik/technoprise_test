@@ -24,3 +24,11 @@ dart run build_runner build
 ```bash
  flutter run 
 ```
+
+Screenshots
+
+![List Page](screenshots/home.png)
+
+![Create List Page](screenshots/create.png)
+
+

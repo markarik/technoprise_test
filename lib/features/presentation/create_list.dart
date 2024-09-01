@@ -2,6 +2,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:technoprise_test/commonWidgets/text_form_field.dart';
+import 'package:technoprise_test/commonWidgets/widgets.dart';
 import 'package:technoprise_test/imports.dart';
 
 class CreateListPage extends HookConsumerWidget {
@@ -67,6 +68,7 @@ class CreateListPage extends HookConsumerWidget {
                     children: [
                       Row(
                         children: [
+                          astericWidget(),
                           Text(
                             instruction,
                             style: fontSize12400.copyWith(
@@ -93,6 +95,7 @@ class CreateListPage extends HookConsumerWidget {
                         onchanged: (val) {},
                         name: 'title',
                         textInputType: TextInputType.text,
+                        isRequired: true,
                       ),
                       SizedBox(
                         height: AppSizes.appHeight(20),
@@ -106,11 +109,6 @@ class CreateListPage extends HookConsumerWidget {
                         controller: descriptionController,
                         onchanged: (val) {},
                         name: 'description',
-                        validators: FormBuilderValidators.compose(
-                          [
-                            FormBuilderValidators.required(),
-                          ],
-                        ),
                         textInputType: TextInputType.text,
                       ),
                     ],
